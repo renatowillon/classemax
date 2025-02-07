@@ -3,12 +3,13 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import { Card, CardContent } from './ui/card'
 import Autoplay from 'embla-carousel-autoplay'
 import React from 'react'
+import Image from 'next/image'
 
 export const Banner = () => {
   const plugin = React.useRef(Autoplay({ delay: 3000 }))
 
   return (
-    <div className="bg-slate-900 p-6 flex items-center justify-center">
+    <div className=" w-full flex items-center justify-center">
       <Carousel
         className="w-full"
         plugins={[plugin.current]}
@@ -16,17 +17,15 @@ export const Banner = () => {
         //onMouseLeave={plugin.current.reset}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex h-[500px] items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
+          <CarouselItem className="py-4">
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner1.jpg)] bg-cover"></CardContent>
+          </CarouselItem>
+          <CarouselItem className="py-4">
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner2.jpg)] bg-cover"></CardContent>
+          </CarouselItem>
+          <CarouselItem className="py-4">
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner3.jpg)] bg-cover"></CardContent>
+          </CarouselItem>
         </CarouselContent>
       </Carousel>
     </div>
