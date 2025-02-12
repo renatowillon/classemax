@@ -1,4 +1,5 @@
 'use client'
+import { FaleConosco } from './faleConosco'
 import { Button } from './ui/button'
 import Link from 'next/link'
 
@@ -11,15 +12,7 @@ export const Header = () => {
         <Button className="bg-yellow-400 text-black rounded-full p-6 hover:bg-secondary">
           Area do Aluno
         </Button>
-        <Button asChild className="bg-yellow-400 text-black rounded-full p-6 hover:bg-secondary">
-          <Link
-            target="_blank"
-            href="https://api.whatsapp.com/send?phone=5583988332659"
-            className=""
-          >
-            Fale Conosco
-          </Link>
-        </Button>
+        <FaleConosco />
       </div>
     </div>
   )
