@@ -5,7 +5,7 @@ export const AulasPopulares = () => {
     <div className="py-3">
       <div className="flex flex-col items-center justify-center gap-2">
         <p>
-          <University size={30} className="text-violet-700" />
+          <University size={30} className="text-primary" />
         </p>
         <p className="text-3xl font-bold text-slate-700">Aulas Populares</p>
       </div>

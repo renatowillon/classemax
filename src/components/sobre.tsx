@@ -10,12 +10,12 @@ export const Sobre = () => {
       </div>
       <div className="flex flex-col gap-3">
         <p>
-          <Link size={30} className="text-violet-700" />
+          <Link size={30} className="text-primary" />
         </p>
         <p className="text-lg text-slate-700">Sobre nós</p>
         <div className="text-3xl text-slate-700 font-bold pl-10">
           <p className="">Anos de experiência no</p>
-          <p className="text-violet-700 pl-4">setor de ensino</p>
+          <p className="text-primary pl-4">setor de ensino</p>
         </div>
         <div className="text-xl flex flex-col gap-5 text-slate-700">
           <p>
