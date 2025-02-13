@@ -3,6 +3,7 @@ import { DireitosAutorais } from './direitosAutorais'
 import { FaleConosco } from './faleConosco'
 import MiniMap, { rota } from './miniMap'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 export const Footer = () => {
   return (
@@ -20,18 +21,24 @@ export const Footer = () => {
           <FaleConosco />
           <div className="text-slate-100 flex items-center justify-center flex-col">
             <p>
-              <span className="font-bold">Fone: </span>+55 83 98833-2659
+              <span className="font-bold">Fone: </span>83 98833-2659
             </p>
             <p>
-              <span className="font-bold">Email:</span>renatowillon@hotmail.com
+              <span className="font-bold">Email:</span> renatowillon@hotmail.com
             </p>
           </div>
         </div>
 
         <div className="text-slate-100 flex flex-col items-center justify-center gap-2">
-          <Link href={rota} target="_blank" className="text-2xl font-bold flex gap-2 items-center">
-            Criar Rota <MapPlus />
-          </Link>
+          <Button>
+            <Link
+              href={rota}
+              target="_blank"
+              className="text-2xl font-bold flex gap-2 items-center"
+            >
+              <MapPlus /> traças rota
+            </Link>
+          </Button>
           <div className="">
             <div>
               {/* <span className="font-bold">Endereço:</span> */}

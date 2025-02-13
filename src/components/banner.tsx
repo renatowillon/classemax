@@ -18,13 +18,13 @@ export const Banner = () => {
       >
         <CarouselContent>
           <CarouselItem className="py-4">
-            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner1.jpg)] bg-cover"></CardContent>
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner1.jpg)] bg-cover bg-center"></CardContent>
           </CarouselItem>
           <CarouselItem className="py-4">
-            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner2.jpg)] bg-cover"></CardContent>
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner2.jpg)] bg-cover bg-center"></CardContent>
           </CarouselItem>
           <CarouselItem className="py-4">
-            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner3.jpg)] bg-cover"></CardContent>
+            <CardContent className="flex h-[500px] items-center justify-center p-6 bg-[url(/imagens/banner3.jpg)] bg-cover bg-center"></CardContent>
           </CarouselItem>
         </CarouselContent>
       </Carousel>
