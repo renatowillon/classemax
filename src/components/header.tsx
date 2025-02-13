@@ -1,4 +1,5 @@
 'use client'
+import { AreaDoAluno } from './areaDoAluno'
 import { FaleConosco } from './faleConosco'
 import { Button } from './ui/button'
 import Link from 'next/link'
@@ -9,9 +10,7 @@ export const Header = () => {
       <div className="text-slate-50 font-bold text-2xl">Classe Max</div>
 
       <div className="flex gap-3">
-        <Button className="bg-yellow-400 text-black rounded-full p-6 hover:bg-secondary">
-          Area do Aluno
-        </Button>
+        <AreaDoAluno />
         <FaleConosco />
       </div>
     </div>

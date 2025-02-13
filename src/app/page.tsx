@@ -1,4 +1,4 @@
-import { AulasPopulares } from '@/components/aulas'
+import { AtividadesPopulares } from '@/components/aulas'
 import { Banner } from '@/components/banner'
 import { Blocos } from '@/components/blocos'
 import { CheckSite } from '@/components/checkSite'
@@ -17,7 +17,7 @@ const Home = () => {
       <Separator />
       <Sobre />
       <Separator />
-      <AulasPopulares />
+      <AtividadesPopulares />
       <CheckSite />
       <Footer />
     </div>

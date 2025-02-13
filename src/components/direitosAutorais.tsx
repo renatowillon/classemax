@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const DireitosAutorais = () => {
   return (
-    <footer className="pt-5">
+    <footer className="pt-5 text-slate-100">
       <Separator />
       <div className="flex justify-center items-center gap-2 py-5 text-center text-sm opacity-50">
         feito com <Heart fill="white" size={20} className="animate-pulse" />
