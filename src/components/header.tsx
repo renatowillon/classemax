@@ -12,7 +12,6 @@ export const Header = () => {
       <div className="flex gap-3">
         <AreaDoAluno />
         <FaleConosco />
-        <UserButton />
       </div>
     </div>
   )

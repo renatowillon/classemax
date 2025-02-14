@@ -1,9 +1,11 @@
 import { DireitosAutorais } from '@/components/direitosAutorais'
-
 import { Header } from '@/components/header'
+import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { auth } from '@clerk/nextjs/server'
+import { UserButton } from '@clerk/nextjs'
+import { auth, currentUser } from '@clerk/nextjs/server'
 import { TabsContent } from '@radix-ui/react-tabs'
+import { AlignJustify } from 'lucide-react'
 import { redirect } from 'next/navigation'
 
 type typeAluno = {
@@ -19,6 +21,7 @@ type typeAluno = {
 
 const AreaAluno = async () => {
   const { userId } = await auth()
+  const user = await currentUser()
   if (!userId) {
     redirect('/login')
   }
@@ -26,13 +29,28 @@ const AreaAluno = async () => {
   return (
     <div className="w-full h-full bg-slate-200">
       <Header />
-      <div className="bg-slate-50 m-5 rounded-md p-3">Area do Aluno seja bem vindo: AlunoName</div>
-      <div className="px-5 inline-flex h-screen">
-        <Tabs className="flex flex-row gap-5 h-full w-full">
-          <aside className="">
-            <TabsList className="flex-col w-80 gap-3 p-3 bg-slate-50">
+      <div className="bg-slate-50 m-5 rounded-md p-3 flex items-center justify-between px-10">
+        <div>
+          <AlignJustify />
+        </div>
+        <div className="flex items-center gap-2">
+          <p>Olá</p>
+          <div>
+            <UserButton showName />
+          </div>
+        </div>
+      </div>
+
+      <Tabs defaultValue="home" className="flex flex-row gap-5 h-[550px] pb-5 w-full">
+        <div className="px-5 grid grid-cols-5 gap-5 w-full h-full">
+          <aside className="col-span-1">
+            <TabsList className="flex-col gap-3 w-full p-3 bg-slate-50">
+              <div className="font-bold flex flex-col items-center justify-center py-5">
+                Portal do Aluno
+              </div>
+              <Separator />
               <TabsTrigger value="home" className="w-full p-3 bg-slate-50">
-                Home
+                Quadro de Avisos
               </TabsTrigger>
               <TabsTrigger value="notas" className="w-full p-3 bg-slate-50">
                 Notas
@@ -45,25 +63,33 @@ const AreaAluno = async () => {
               </TabsTrigger>
             </TabsList>
           </aside>
-          <div className="">
-            <TabsContent value="home" className="p-5 ">
-              Avisos
+          <div className="col-span-4">
+            <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+              <h1 className="pb-3 pl-3 text-lg">Avisos</h1>
+              <Separator />
+              <div className="py-3">Conteudo Principal</div>
             </TabsContent>
-            <TabsContent value="notas" className="p-5 ">
-              Notas
+            <TabsContent value="notas" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+              <h1 className="pb-3 pl-3 text-lg">Notas</h1>
+              <Separator />
+              <div className="py-3">Conteudo Principal</div>
             </TabsContent>
-            <TabsContent value="financeiro" className="p-5 ">
-              Financeiro
+            <TabsContent value="financeiro" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+              <h1 className="pb-3 pl-3 text-lg">Financeiro</h1>
+              <Separator />
+              <div className="py-3">Conteudo Principal</div>
             </TabsContent>
-            <TabsContent value="secretaria" className="p-5 ">
-              Secretaria
+            <TabsContent value="secretaria" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+              <h1 className="pb-3 pl-3 text-lg">Secretaria</h1>
+              <Separator />
+              <div className="py-3">Conteudo Principal</div>
             </TabsContent>
           </div>
-        </Tabs>
-      </div>
-      {/* <footer className="bg-gray-800">
+        </div>
+      </Tabs>
+      <footer className="bg-gray-800 mt-5">
         <DireitosAutorais />
-      </footer> */}
+      </footer>
     </div>
   )
 }
