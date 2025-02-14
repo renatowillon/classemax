@@ -1,9 +1,17 @@
 import Image from 'next/image'
-import { LogInIcon } from 'lucide-react'
+import { Home, LogInIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Login } from './components/login'
+import { SignInButton } from '@clerk/nextjs'
+import { auth } from '@clerk/nextjs/server'
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
 
 const LoginPage = async () => {
+  const { userId } = await auth()
+  if (userId) {
+    redirect('/areaAluno')
+  }
+
   return (
     <div className="grid h-screen grid-cols-2">
       <div className="mx-auto flex h-full max-w-[550px] flex-col justify-center gap-3 p-8">
@@ -13,10 +21,19 @@ const LoginPage = async () => {
           movimentações, e oferecer insights personalizados, facilitando o controle sua instituição.
         </p>
 
-        <Login />
-        <p className="mb-3 text-muted-foreground flex items-center justify-center">Ou</p>
+        {/* <div className="flex items-center justify-center">
+          <SignIn />
+        </div> */}
+        <SignInButton>
+          <Button>
+            <LogInIcon /> Faça login ou criar conta
+          </Button>
+        </SignInButton>
+
         <Button variant={'outline'}>
-          <LogInIcon className="mr-2" /> Faça Login ou criar conta
+          <Link href="/" className="flex gap-2 items-center">
+            <Home /> Ir para página inicial
+          </Link>
         </Button>
       </div>
       <div className="relative h-full w-full">
