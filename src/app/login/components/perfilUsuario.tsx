@@ -40,16 +40,24 @@ export const PerfilUsuario = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>
-          <div>
-            <p className="text-xs font-bold text-slate-700">{aluno?.nome}</p>
-            <p className="text-xs font-thin text-slate-700">{aluno?.email}</p>
+          <div className="flex items-center gap-3">
+            <div>
+              <Avatar className="h-7 w-7">
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>{aluno?.nome}</AvatarFallback>
+              </Avatar>
+            </div>
+            <div>
+              <p className="text-xs font-bold text-slate-700">{aluno?.nome}</p>
+              <p className="text-xs font-thin text-slate-700">{aluno?.email}</p>
+            </div>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
 
         <Dialog>
           <DialogTrigger asChild>
-            <div className="flex items-center justify-between px-3 text-sm text-slate-700 py-3 hover:bg-slate-100 rounded-md ">
+            <div className="flex items-center justify-between px-3 text-sm text-slate-700 py-3 hover:bg-slate-100 rounded-md cursor-pointer ">
               <div>Preferencias</div>{' '}
               <div>
                 <UserCog size={15} />
@@ -70,7 +78,7 @@ export const PerfilUsuario = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={logout}
-          className="flex items-center justify-between px-3 text-slate-700"
+          className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
         >
           <p>Sair</p>{' '}
           <span>
