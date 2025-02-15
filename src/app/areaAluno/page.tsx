@@ -1,12 +1,18 @@
+'use client'
+
 import { DireitosAutorais } from '@/components/direitosAutorais'
 import { Header } from '@/components/header'
+import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useAuth } from '@/context/AuthPrivider'
 import { UserButton } from '@clerk/nextjs'
 import { auth, currentUser } from '@clerk/nextjs/server'
 import { TabsContent } from '@radix-ui/react-tabs'
 import { AlignJustify } from 'lucide-react'
 import { redirect } from 'next/navigation'
+import { Logout } from '../login/components/logout'
+import { PerfilUsuario } from '../login/components/perfilUsuario'
 
 type typeAluno = {
   id: number
@@ -19,12 +25,14 @@ type typeAluno = {
   user_id: string
 }
 
-const AreaAluno = async () => {
-  const { userId } = await auth()
-  const user = await currentUser()
-  if (!userId) {
-    redirect('/login')
-  }
+const AreaAluno = () => {
+  const { aluno, logout } = useAuth()
+  console.log(aluno?.nome)
+
+  // //validação de autenticação
+  // if (!aluno) {
+  //   redirect('/login')
+  // }
 
   return (
     <div className="w-full h-full bg-slate-200">
@@ -36,7 +44,13 @@ const AreaAluno = async () => {
         <div className="flex items-center gap-2">
           <p>Olá</p>
           <div>
-            <UserButton showName />
+            {aluno ? (
+              <div className="flex gap-2 items-center">
+                <PerfilUsuario />
+              </div>
+            ) : (
+              'Visitante'
+            )}
           </div>
         </div>
       </div>

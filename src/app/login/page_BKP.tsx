@@ -5,7 +5,6 @@ import { SignInButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { Login } from './components/login'
 
 const LoginPage = async () => {
   const { userId } = await auth()
@@ -22,7 +21,14 @@ const LoginPage = async () => {
           movimentações, e oferecer insights personalizados, facilitando o controle sua instituição.
         </p>
 
-        <Login />
+        {/* <div className="flex items-center justify-center">
+          <SignIn />
+        </div> */}
+        <SignInButton>
+          <Button>
+            <LogInIcon /> Faça login ou criar conta
+          </Button>
+        </SignInButton>
 
         <Button variant={'outline'}>
           <Link href="/" className="flex gap-2 items-center">
