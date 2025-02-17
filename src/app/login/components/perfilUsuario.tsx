@@ -69,6 +69,9 @@ export const PerfilUsuario = () => {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     try {
+      if (!aluno?.id) {
+        toast.error('ID do aluno não encontrado')
+      }
       const { error } = await supabase
         .from('alunos')
         .update({
@@ -131,7 +134,7 @@ export const PerfilUsuario = () => {
               </div>
             </div>
           </DialogTrigger>
-          <DialogContent forceMount>
+          <DialogContent>
             <DialogHeader>
               <DialogTitle className="text-slate-600 text-md">Preferências do Usuário</DialogTitle>
             </DialogHeader>
