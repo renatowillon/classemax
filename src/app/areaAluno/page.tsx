@@ -7,6 +7,7 @@ import { useAuth } from '@/context/AuthPrivider'
 import { TabsContent } from '@radix-ui/react-tabs'
 import { AlignJustify } from 'lucide-react'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
+import { Avisos } from '@/components/padroes/quadroDeAvisos'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
@@ -62,9 +63,11 @@ const AreaAluno = () => {
           </aside>
           <div className="col-span-4">
             <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg h-[550px]">
-              <h1 className="pb-3 pl-3 text-lg">Avisos</h1>
+              <h1 className="pb-3 pl-3 text-lg">Quadro de Avisos</h1>
               <Separator />
-              <div className="py-3">Conteudo Principal</div>
+              <div className="">
+                <Avisos />
+              </div>
             </TabsContent>
             <TabsContent value="notas" className="p-5 bg-slate-50 rounded-lg h-[550px]">
               <h1 className="pb-3 pl-3 text-lg">Notas</h1>
