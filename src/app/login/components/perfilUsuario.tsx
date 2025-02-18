@@ -4,10 +4,8 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog'
 import {
   DropdownMenu,
@@ -17,20 +15,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { useAuth } from '@/context/AuthPrivider'
 import { supabase } from '@/lib/supabase'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Power, UserCog } from 'lucide-react'
+import { redirect } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -40,7 +32,7 @@ const formSchema = z.object({
   email: z.string().email(),
   senha: z.string().min(3),
   nome: z.string().min(2),
-  telefone: z.string().min(11),
+  telefone: z.union([z.string().min(11), z.number().min(11)]),
 })
 
 export const PerfilUsuario = () => {
@@ -49,10 +41,10 @@ export const PerfilUsuario = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      nome: '',
-      email: '',
-      telefone: '',
-      senha: '',
+      nome: aluno?.nome,
+      email: aluno?.email,
+      telefone: aluno?.telefone,
+      senha: aluno?.senha,
     },
   })
 
@@ -61,7 +53,7 @@ export const PerfilUsuario = () => {
       form.reset({
         nome: aluno.nome || '',
         email: aluno.email || '',
-        senha: '',
+        senha: aluno.senha || '',
         telefone: aluno.telefone || '',
       })
     }
@@ -85,15 +77,17 @@ export const PerfilUsuario = () => {
         throw error
       }
       toast.success('Dados Alterados com Sucesso!')
+      setDialogOpen(false)
     } catch (err) {
       console.log(err)
       toast.error('Erro ao atualizar os dados.')
     }
   }
   const [dialogOpen, setDialogOpen] = useState(false)
+  const [dropOpen, setDropOpen] = useState(false)
   return (
     <>
-      <DropdownMenu>
+      <DropdownMenu open={dropOpen} onOpenChange={setDropOpen}>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="p-3">
             <span className="sr-only">Open menu</span>
@@ -127,8 +121,9 @@ export const PerfilUsuario = () => {
 
           <DropdownMenuSeparator />
           <DropdownMenuItem
-            className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
+            onSelect={() => setDropOpen(false)}
             onClick={() => setDialogOpen(!dialogOpen)}
+            className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
           >
             <div>Preferencias</div>{' '}
             <div>

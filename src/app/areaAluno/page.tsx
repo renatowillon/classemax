@@ -13,6 +13,7 @@ import { AlignJustify } from 'lucide-react'
 import { redirect } from 'next/navigation'
 import { Logout } from '../login/components/logout'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
+import { number } from 'zod'
 
 type typeAluno = {
   id: number
@@ -23,6 +24,7 @@ type typeAluno = {
   email: string
   senha: string
   user_id: string
+  telefonr: string | number
 }
 
 const AreaAluno = () => {
