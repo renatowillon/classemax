@@ -32,7 +32,7 @@ const formSchema = z.object({
   email: z.string().email(),
   senha: z.string().min(3),
   nome: z.string().min(2),
-  telefone: z.union([z.string().min(11), z.number().min(11)]),
+  telefone: z.string().min(11).max(14).regex(/^\d+$/, 'O telefone deve conter apenas números'),
 })
 
 export const PerfilUsuario = () => {

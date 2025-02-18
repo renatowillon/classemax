@@ -24,7 +24,7 @@ type typeAluno = {
   email: string
   senha: string
   user_id: string
-  telefonr: string | number
+  telefone: number
 }
 
 const AreaAluno = () => {
