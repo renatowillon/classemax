@@ -15,14 +15,20 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import { useAuth } from '@/context/AuthPrivider'
 import { supabase } from '@/lib/supabase'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Power, UserCog } from 'lucide-react'
-import { redirect } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'

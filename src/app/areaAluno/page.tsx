@@ -1,31 +1,12 @@
 'use client'
-
 import { DireitosAutorais } from '@/components/direitosAutorais'
 import { Header } from '@/components/header'
-import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useAuth } from '@/context/AuthPrivider'
-import { UserButton } from '@clerk/nextjs'
-import { auth, currentUser } from '@clerk/nextjs/server'
 import { TabsContent } from '@radix-ui/react-tabs'
 import { AlignJustify } from 'lucide-react'
-import { redirect } from 'next/navigation'
-import { Logout } from '../login/components/logout'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
-import { number } from 'zod'
-
-type typeAluno = {
-  id: number
-  data_cadastro: Date
-  nome: string
-  turma: string
-  status_pagamento: string
-  email: string
-  senha: string
-  user_id: string
-  telefone: number
-}
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
