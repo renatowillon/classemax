@@ -8,6 +8,8 @@ import { TabsContent } from '@radix-ui/react-tabs'
 import { AlignJustify } from 'lucide-react'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
 import { Avisos } from '@/components/padroes/quadroDeAvisos'
+import { AddAviso } from '@/components/padroes/AddAvisos'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
@@ -39,7 +41,7 @@ const AreaAluno = () => {
         </div>
       </div>
 
-      <Tabs defaultValue="home" className="flex flex-row gap-5 h-[550px] pb-5 w-full">
+      <Tabs defaultValue="home" className="flex flex-row gap-5 pb-5 w-full">
         <div className="px-5 grid grid-cols-5 gap-5 w-full h-full">
           <aside className="col-span-1">
             <TabsList className="flex-col gap-3 w-full p-3 bg-slate-50">
@@ -62,24 +64,29 @@ const AreaAluno = () => {
             </TabsList>
           </aside>
           <div className="col-span-4">
-            <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg h-[550px]">
-              <h1 className="pb-3 pl-3 text-lg">Quadro de Avisos</h1>
+            <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
+              <div className="flex items-center justify-between pb-3 pl-3">
+                <h1 className=" text-lg">Quadro de Avisos</h1>
+                {aluno?.adm == true && <AddAviso />}
+              </div>
               <Separator />
               <div className="">
-                <Avisos />
+                <ScrollArea>
+                  <Avisos />
+                </ScrollArea>
               </div>
             </TabsContent>
-            <TabsContent value="notas" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+            <TabsContent value="notas" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
               <h1 className="pb-3 pl-3 text-lg">Notas</h1>
               <Separator />
               <div className="py-3">Conteudo Principal</div>
             </TabsContent>
-            <TabsContent value="financeiro" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+            <TabsContent value="financeiro" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
               <h1 className="pb-3 pl-3 text-lg">Financeiro</h1>
               <Separator />
               <div className="py-3">Conteudo Principal</div>
             </TabsContent>
-            <TabsContent value="secretaria" className="p-5 bg-slate-50 rounded-lg h-[550px]">
+            <TabsContent value="secretaria" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
               <h1 className="pb-3 pl-3 text-lg">Secretaria</h1>
               <Separator />
               <div className="py-3">Conteudo Principal</div>

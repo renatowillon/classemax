@@ -1,4 +1,4 @@
-export type Aviso = {
+export type TypeAviso = {
   id: number
   titulo: string
   descricao: string

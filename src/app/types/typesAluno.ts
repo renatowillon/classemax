@@ -1,11 +1,14 @@
 export type Aluno = {
   id: number
+  data_cadastro: Date
   nome: string
-  email: string
-  senha: string
   turma: string
   status_pagamento: string
-  user_id: string
+  email: string
+  senha: string
+  cpf: string
   imagem: string
   telefone: string
+  aluno: boolean
+  adm: boolean
 }
