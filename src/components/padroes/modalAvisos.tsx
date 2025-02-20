@@ -38,6 +38,7 @@ export const ModalAviso = ({ isOpen, setIsOpen }: ModalAvisoProps) => {
         }),
       })
       const data = await response.json()
+
       if (!response.ok) {
         throw new Error(data.error || 'Erro ao criar aviso')
       }

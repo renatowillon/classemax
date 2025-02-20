@@ -2,9 +2,9 @@
 import { DireitosAutorais } from '@/components/direitosAutorais'
 import { Header } from '@/components/header'
 import { Separator } from '@/components/ui/separator'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useAuth } from '@/context/AuthPrivider'
-import { TabsContent } from '@radix-ui/react-tabs'
+
 import { AlignJustify } from 'lucide-react'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
 import { Avisos } from '@/components/padroes/quadroDeAvisos'
