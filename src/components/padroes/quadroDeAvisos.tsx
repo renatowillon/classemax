@@ -14,6 +14,8 @@ import {
   DialogTrigger,
 } from '../ui/dialog'
 import { set } from 'react-hook-form'
+import { AddAviso } from './AddAvisos'
+import { Separator } from '../ui/separator'
 
 export const Avisos = () => {
   const [avisos, setAvisos] = useState<TypeAviso[]>([])
@@ -47,6 +49,13 @@ export const Avisos = () => {
   }
   return (
     <div>
+      <div className="flex items-center justify-between pb-3 pl-3">
+        <h1 className=" text-lg">Quadro de Avisos</h1>
+        {aluno?.adm == true && (
+          <AddAviso setRefreshAviso={setRefreshAviso} refreshAviso={refreshAviso} />
+        )}
+      </div>
+      <Separator />
       <ul>
         {avisos.length == 0 && (
           <div className="flex items-center justify-center gap-2 py-5">

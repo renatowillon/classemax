@@ -65,11 +65,6 @@ const AreaAluno = () => {
           </aside>
           <div className="col-span-4">
             <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
-              <div className="flex items-center justify-between pb-3 pl-3">
-                <h1 className=" text-lg">Quadro de Avisos</h1>
-                {aluno?.adm == true && <AddAviso />}
-              </div>
-              <Separator />
               <div className="">
                 <ScrollArea>
                   <Avisos />

@@ -14,10 +14,13 @@ import { toast } from 'sonner'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
+import { Dispatch, SetStateAction } from 'react'
 
 interface ModalAvisoProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
+  setRefreshAviso: Dispatch<SetStateAction<boolean>>
+  refreshAviso: boolean
 }
 
 const formSchemaAviso = z.object({
@@ -25,7 +28,12 @@ const formSchemaAviso = z.object({
   descricao: z.string().min(5, { message: 'Descrição conter no mínimo 5 caracteres' }).max(500),
 })
 
-export const ModalAviso = ({ isOpen, setIsOpen }: ModalAvisoProps) => {
+export const ModalAviso = ({
+  isOpen,
+  setIsOpen,
+  setRefreshAviso,
+  refreshAviso,
+}: ModalAvisoProps) => {
   const onSubmit = async (values: z.infer<typeof formSchemaAviso>) => {
     //logica de adicionar os dados no banco de dados do supabase
     try {
@@ -108,7 +116,11 @@ export const ModalAviso = ({ isOpen, setIsOpen }: ModalAvisoProps) => {
                   Sair
                 </Button>
               </DialogClose>
-              <Button variant={'default'} type="submit">
+              <Button
+                variant={'default'}
+                type="submit"
+                onClick={() => setRefreshAviso(!refreshAviso)}
+              >
                 Salvar
               </Button>
             </div>
