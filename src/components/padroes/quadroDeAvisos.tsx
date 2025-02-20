@@ -51,7 +51,7 @@ export const Avisos = () => {
     <div>
       <div className="flex items-center justify-between pb-3 pl-3">
         <h1 className=" text-lg">Quadro de Avisos</h1>
-        {aluno?.adm == true && (
+        {aluno?.is_adm == true && (
           <AddAviso setRefreshAviso={setRefreshAviso} refreshAviso={refreshAviso} />
         )}
       </div>
@@ -79,7 +79,7 @@ export const Avisos = () => {
                   <h1 className="text-2xl font-bold text-slate-600">{aviso.titulo}</h1>
                   <div className="text-slate-600 px-5">{aviso.descricao}</div>
                 </div>
-                {aluno?.adm == true && (
+                {aluno?.is_adm == true && (
                   <div className="flex text-end items-center gap-2">
                     <Dialog>
                       <DialogTrigger asChild>

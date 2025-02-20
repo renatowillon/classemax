@@ -9,6 +9,6 @@ export type Aluno = {
   cpf: string
   imagem: string
   telefone: string
-  aluno: boolean
-  adm: boolean
+  is_aluno: boolean
+  is_adm: boolean
 }

@@ -4,11 +4,9 @@ import { Header } from '@/components/header'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useAuth } from '@/context/AuthPrivider'
-
 import { AlignJustify } from 'lucide-react'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
 import { Avisos } from '@/components/padroes/quadroDeAvisos'
-import { AddAviso } from '@/components/padroes/AddAvisos'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
 const AreaAluno = () => {
@@ -49,7 +47,7 @@ const AreaAluno = () => {
                 Portal do Aluno
               </div>
               <Separator />
-              <TabsTrigger value="home" className="w-full p-3 bg-slate-50">
+              <TabsTrigger value="home" className="w-full p-3 bg-slate-50  ">
                 Quadro de Avisos
               </TabsTrigger>
               <TabsTrigger value="notas" className="w-full p-3 bg-slate-50">
@@ -61,6 +59,16 @@ const AreaAluno = () => {
               <TabsTrigger value="secretaria" className="w-full p-3 bg-slate-50">
                 Secretaria
               </TabsTrigger>
+              {aluno?.is_adm == true && (
+                <>
+                  <TabsTrigger value="alunos" className="w-full p-3 bg-slate-50">
+                    Alunos
+                  </TabsTrigger>
+                  <TabsTrigger value="disciplinas" className="w-full p-3 bg-slate-50">
+                    Disciplinas
+                  </TabsTrigger>
+                </>
+              )}
             </TabsList>
           </aside>
           <div className="col-span-4">
@@ -86,6 +94,23 @@ const AreaAluno = () => {
               <Separator />
               <div className="py-3">Conteudo Principal</div>
             </TabsContent>
+            {aluno?.is_adm == true && (
+              <>
+                <TabsContent value="alunos" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
+                  <h1 className="pb-3 pl-3 text-lg">Alunos</h1>
+                  <Separator />
+                  <div className="py-3">Conteudo Principal</div>
+                </TabsContent>
+                <TabsContent
+                  value="disciplinas"
+                  className="p-5 bg-slate-50 rounded-lg min-h-[450px]"
+                >
+                  <h1 className="pb-3 pl-3 text-lg">Disciplinas</h1>
+                  <Separator />
+                  <div className="py-3">Conteudo Principal</div>
+                </TabsContent>
+              </>
+            )}
           </div>
         </div>
       </Tabs>
