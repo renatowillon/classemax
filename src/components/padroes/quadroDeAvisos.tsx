@@ -47,6 +47,9 @@ export const Avisos = () => {
       console.log(error)
     }
   }
+  const EditAviso = (id: number) => {
+    alert('vamos simbora')
+  }
   return (
     <div>
       <div className="flex items-center justify-between pb-3 pl-3">
@@ -113,7 +116,10 @@ export const Avisos = () => {
                         </div>
                       </DialogContent>
                     </Dialog>
-                    <Button className="p-3 bg-slate-600 rounded-md hover:bg-slate-500">
+                    <Button
+                      onClick={() => EditAviso(aviso.id)}
+                      className="p-3 bg-slate-600 rounded-md hover:bg-slate-500"
+                    >
                       <PenBox size={15} color="white" />
                     </Button>
                   </div>
