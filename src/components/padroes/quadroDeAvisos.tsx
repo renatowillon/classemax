@@ -50,10 +50,10 @@ export const QuadroDeAvisos = () => {
       console.log(error)
     }
   }
+
   const EditAviso = (aviso: TypeAviso) => {
-    setAvisoSelecionado(aviso)
     setAbrirModalEditar(!abrirModalEditar)
-    setRefreshAviso(!refreshAviso)
+    setAvisoSelecionado(aviso)
   }
 
   return (
@@ -61,7 +61,8 @@ export const QuadroDeAvisos = () => {
       <ModalAviso
         isOpen={abrirModalEditar}
         setIsOpen={setAbrirModalEditar}
-        setRefreshAviso={() => !setRefreshAviso}
+        refreshAviso={refreshAviso}
+        setRefreshAviso={setRefreshAviso}
         avisoSelecionado={avisoSelecionado}
       />
       <div>

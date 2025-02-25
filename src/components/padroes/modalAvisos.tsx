@@ -61,6 +61,7 @@ export const ModalAviso = ({
       )
       form.reset()
       setIsOpen(false)
+      setRefreshAviso(!refreshAviso)
     } catch (error: any) {
       toast.error(error.message)
     }
@@ -68,6 +69,7 @@ export const ModalAviso = ({
     //resetar o formulario e fechar o dialog
     form.reset()
     setIsOpen(false)
+    setRefreshAviso(!refreshAviso)
   }
   const form = useForm<z.infer<typeof formSchemaAviso>>({
     resolver: zodResolver(formSchemaAviso),
@@ -97,7 +99,9 @@ export const ModalAviso = ({
     >
       <DialogContent>
         <DialogHeader className="p-2">
-          <DialogTitle className="text-slate-700">Crie seu aviso</DialogTitle>
+          <DialogTitle className="text-slate-700">
+            {avisoSelecionado ? 'Atualize seu aviso' : 'Crie seu aviso'}{' '}
+          </DialogTitle>
           <DialogDescription>insira as informações abaixo</DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -139,7 +143,7 @@ export const ModalAviso = ({
                 type="submit"
                 onClick={() => setRefreshAviso(!refreshAviso)}
               >
-                Salvar
+                {avisoSelecionado ? 'Atualizar' : 'Salvar'}
               </Button>
             </div>
           </form>
