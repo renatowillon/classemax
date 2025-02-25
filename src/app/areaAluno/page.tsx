@@ -6,8 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useAuth } from '@/context/AuthPrivider'
 import { AlignJustify } from 'lucide-react'
 import { PerfilUsuario } from '../login/components/perfilUsuario'
-import { Avisos } from '@/components/padroes/quadroDeAvisos'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
@@ -75,7 +75,7 @@ const AreaAluno = () => {
             <TabsContent value="home" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
               <div className="">
                 <ScrollArea>
-                  <Avisos />
+                  <QuadroDeAvisos />
                 </ScrollArea>
               </div>
             </TabsContent>

@@ -14,13 +14,15 @@ import { toast } from 'sonner'
 import { Input } from '../ui/input'
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { TypeAviso } from '@/app/types/typesAvisos'
 
 interface ModalAvisoProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
   setRefreshAviso: Dispatch<SetStateAction<boolean>>
-  refreshAviso: boolean
+  refreshAviso?: boolean
+  avisoSelecionado?: TypeAviso | null
 }
 
 const formSchemaAviso = z.object({
@@ -33,14 +35,17 @@ export const ModalAviso = ({
   setIsOpen,
   setRefreshAviso,
   refreshAviso,
+  avisoSelecionado,
 }: ModalAvisoProps) => {
   const onSubmit = async (values: z.infer<typeof formSchemaAviso>) => {
     //logica de adicionar os dados no banco de dados do supabase
     try {
+      const method = avisoSelecionado ? 'PUT' : 'POST'
       const response = await fetch('/api/avisos', {
-        method: 'POST',
+        method: method,
         headers: { 'content-Type': 'application/json' },
         body: JSON.stringify({
+          id: avisoSelecionado?.id,
           titulo: values.titulo,
           descricao: values.descricao,
         }),
@@ -51,7 +56,9 @@ export const ModalAviso = ({
         throw new Error(data.error || 'Erro ao criar aviso')
       }
 
-      toast.success('Aviso adicionado com sucesso!')
+      toast.success(
+        avisoSelecionado ? 'Aviso atualizado com sucesso!' : 'Aviso adicionado com sucesso!'
+      )
       form.reset()
       setIsOpen(false)
     } catch (error: any) {
@@ -69,6 +76,17 @@ export const ModalAviso = ({
       descricao: '',
     },
   })
+
+  useEffect(() => {
+    if (avisoSelecionado) {
+      form.reset({
+        titulo: avisoSelecionado.titulo,
+        descricao: avisoSelecionado.descricao,
+      })
+    } else {
+      form.reset()
+    }
+  }, [avisoSelecionado])
 
   return (
     <Dialog
