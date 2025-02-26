@@ -7,5 +7,5 @@ export type TypeFinanceiro = {
   status: string
   descricao: string
   pago: boolean
-  data_pagamento: Date
+  data_pagamento: Date | string | null
 }
