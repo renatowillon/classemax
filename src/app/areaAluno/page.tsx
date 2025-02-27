@@ -9,6 +9,7 @@ import { PerfilUsuario } from '../login/components/perfilUsuario'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 import { FinanceiroAluno } from '@/components/financeiro/FinanceiroAluno'
+import { AreaNotas } from '@/components/notas/areaNotas'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
@@ -81,9 +82,7 @@ const AreaAluno = () => {
               </div>
             </TabsContent>
             <TabsContent value="notas" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
-              <h1 className="pb-3 pl-3 text-lg">Notas</h1>
-              <Separator />
-              <div className="py-3">Conteudo Principal</div>
+              <AreaNotas />
             </TabsContent>
             <TabsContent value="financeiro" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
               <FinanceiroAluno />
