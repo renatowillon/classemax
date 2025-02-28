@@ -28,11 +28,11 @@ const AreaAluno = () => {
         <div>
           <AlignJustify />
         </div>
-        <div className="flex items-center gap-2">
-          <p>Olá</p>
+        <div className="flex items-center">
+          <p>Olá,</p>
           <div>
             {aluno ? (
-              <div className="flex gap-2 items-center">
+              <div className="flex items-center">
                 <PerfilUsuario />
               </div>
             ) : (
