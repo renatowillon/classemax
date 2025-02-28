@@ -58,7 +58,9 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const logout = () => {
     localStorage.removeItem('aluno')
     setAluno(null)
-    router.push('/login')
+    setTimeout(() => {
+      router.push('/login')
+    }, 0)
   }
 
   return <AuthContext.Provider value={{ aluno, login, logout }}>{children}</AuthContext.Provider>

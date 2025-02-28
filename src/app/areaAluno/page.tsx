@@ -11,15 +11,16 @@ import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 import { FinanceiroAluno } from '@/components/financeiro/FinanceiroAluno'
 import { AreaNotas } from '@/components/notas/areaNotas'
 import { SecretariaAluno } from '@/components/secretaria/secretariaAluno'
+import { redirect } from 'next/navigation'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
   console.log(aluno?.nome)
 
-  // //validação de autenticação
-  // if (!aluno) {
-  //   redirect('/login')
-  // }
+  //validação de autenticação
+  if (!aluno) {
+    redirect('/login')
+  }
 
   return (
     <div className="w-full h-full bg-slate-200">
