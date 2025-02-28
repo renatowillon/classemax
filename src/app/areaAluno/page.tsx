@@ -10,6 +10,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 import { FinanceiroAluno } from '@/components/financeiro/FinanceiroAluno'
 import { AreaNotas } from '@/components/notas/areaNotas'
+import { SecretariaAluno } from '@/components/secretaria/secretariaAluno'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
@@ -61,16 +62,6 @@ const AreaAluno = () => {
               <TabsTrigger value="secretaria" className="w-full p-3 bg-slate-50">
                 Secretaria
               </TabsTrigger>
-              {aluno?.is_adm == true && (
-                <>
-                  <TabsTrigger value="alunos" className="w-full p-3 bg-slate-50">
-                    Alunos
-                  </TabsTrigger>
-                  <TabsTrigger value="disciplinas" className="w-full p-3 bg-slate-50">
-                    Disciplinas
-                  </TabsTrigger>
-                </>
-              )}
             </TabsList>
           </aside>
           <div className="col-span-4">
@@ -88,27 +79,8 @@ const AreaAluno = () => {
               <FinanceiroAluno />
             </TabsContent>
             <TabsContent value="secretaria" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
-              <h1 className="pb-3 pl-3 text-lg">Secretaria</h1>
-              <Separator />
-              <div className="py-3">Conteudo Principal</div>
+              <SecretariaAluno />
             </TabsContent>
-            {aluno?.is_adm == true && (
-              <>
-                <TabsContent value="alunos" className="p-5 bg-slate-50 rounded-lg min-h-[450px]">
-                  <h1 className="pb-3 pl-3 text-lg">Alunos</h1>
-                  <Separator />
-                  <div className="py-3">Conteudo Principal</div>
-                </TabsContent>
-                <TabsContent
-                  value="disciplinas"
-                  className="p-5 bg-slate-50 rounded-lg min-h-[450px]"
-                >
-                  <h1 className="pb-3 pl-3 text-lg">Disciplinas</h1>
-                  <Separator />
-                  <div className="py-3">Conteudo Principal</div>
-                </TabsContent>
-              </>
-            )}
           </div>
         </div>
       </Tabs>

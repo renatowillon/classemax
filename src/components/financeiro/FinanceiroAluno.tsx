@@ -58,13 +58,11 @@ export const FinanceiroAluno = () => {
   }, [aluno?.id, loading])
 
   const acoes = () => {
-    toast.warning(
-      'Ações temporariamente indisponivel para alunos, disponivel apenas para Administrador'
-    )
+    toast.warning('Ações temporariamente indisponivel')
   }
 
   return (
-    <div>
+    <div className="w-full h-[450px]">
       <div className="flex items-center justify-between pb-3 pl-3">
         <h1 className=" text-lg">Financeiro</h1>
       </div>

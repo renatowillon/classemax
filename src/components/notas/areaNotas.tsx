@@ -7,7 +7,7 @@ import { TabelaNotas } from './tabelaNotas'
 export const AreaNotas = () => {
   const [notas, setNotas] = useState('')
   return (
-    <div>
+    <div className="w-full h-[450px]">
       <div className="flex items-center justify-between pb-3 pl-3">
         <h1 className=" text-lg">Notas</h1>
       </div>

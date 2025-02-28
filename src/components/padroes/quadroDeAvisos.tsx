@@ -74,7 +74,7 @@ export const QuadroDeAvisos = () => {
           )}
         </div>
         <Separator />
-        <ScrollArea className="w-full h-[500px]">
+        <ScrollArea className="w-full h-[450px]">
           <ul>
             {avisos.length == 0 && (
               <div className="flex items-center justify-center gap-2 py-5">
