@@ -15,12 +15,11 @@ import { redirect } from 'next/navigation'
 
 const AreaAluno = () => {
   const { aluno, logout } = useAuth()
-  console.log(aluno?.nome)
 
   //validação de autenticação
-  if (!aluno) {
-    redirect('/login')
-  }
+  // if (!aluno) {
+  //   redirect('/login')
+  // }
 
   return (
     <div className="w-full h-full bg-slate-200">

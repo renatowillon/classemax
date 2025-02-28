@@ -6,9 +6,9 @@ import { useRouter } from 'next/navigation'
 import { Aluno } from '@/app/types/typesAluno'
 
 // Definição dos tipos
-
 interface AuthContextType {
   aluno: Aluno | null
+  loading: boolean
   login: (email: string, senha: string) => Promise<{ error?: string; success?: boolean }>
   logout: () => void
 }
@@ -22,19 +22,27 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [aluno, setAluno] = useState<Aluno | null>(null)
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
-    const storedAluno = localStorage.getItem('aluno')
-    if (storedAluno) {
-      const parsedAluno = JSON.parse(storedAluno)
-      const now = new Date().getTime()
-      if (now - parsedAluno.timestamp < 6 * 60 * 60 * 1000) {
-        setAluno(parsedAluno.data)
-      } else {
-        localStorage.removeItem('aluno')
+    const checkSession = async () => {
+      const alunoData = localStorage.getItem('alunos')
+      if (alunoData) {
+        const { data, timestamp } = JSON.parse(alunoData)
+        const now = new Date().getTime()
+        const sixHoursInMillis = 6 * 60 * 60 * 1000
+
+        if (now - timestamp < sixHoursInMillis) {
+          setAluno(data)
+        } else {
+          localStorage.removeItem('alunos')
+        }
       }
+      setLoading(false)
     }
+
+    checkSession()
   }, [])
 
   const login = async (email: string, senha: string) => {
@@ -49,21 +57,23 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
 
     const alunoData = { data: aluno, timestamp: new Date().getTime() }
-    localStorage.setItem('aluno', JSON.stringify(alunoData))
+    localStorage.setItem('alunos', JSON.stringify(alunoData))
     setAluno(aluno)
     router.push('/areaAluno')
     return { success: true }
   }
 
   const logout = () => {
-    localStorage.removeItem('aluno')
+    localStorage.removeItem('alunos')
     setAluno(null)
-    setTimeout(() => {
-      router.push('/login')
-    }, 0)
+    router.push('/login')
   }
 
-  return <AuthContext.Provider value={{ aluno, login, logout }}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={{ aluno, loading, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export const useAuth = () => {
