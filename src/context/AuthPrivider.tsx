@@ -59,8 +59,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const alunoData = { data: aluno, timestamp: new Date().getTime() }
     localStorage.setItem('alunos', JSON.stringify(alunoData))
     setAluno(aluno)
-    router.push('/areaAluno')
-    return { success: true }
+    if (aluno.is_adm == true) {
+      router.push('/areaAdministrativa')
+      return { success: true }
+    } else {
+      router.push('/areaAluno')
+      return { success: true }
+    }
   }
 
   const logout = () => {
