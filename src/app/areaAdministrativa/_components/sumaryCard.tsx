@@ -7,21 +7,20 @@ interface SumaryCardProps {
   valor: string
   icone: ReactNode
   descricao: string
+  categoria: 'alunos' | 'avisos' | 'pagos' | 'emAberto'
 }
 
-export const SumaryCard = () => {
+export const SumaryCard = ({ categoria, descricao, icone, nome, valor }: SumaryCardProps) => {
   return (
     <Card className="bg-slate-50 p-6">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-4">
-          <p className="text-muted-foreground text-md">Total Usuário</p>
-          <p className="text-3xl font-bold pl-5">40,689</p>
+          <p className="text-muted-foreground text-md">{nome}</p>
+          <p className="text-3xl font-bold pl-5">{valor}</p>
         </div>
-        <div className="bg-purple-600/10 p-5 rounded-2xl">
-          <Users className="text-purple-600" />
-        </div>
+        <div className="bg-purple-600/10 p-5 rounded-2xl text-purple-500">{icone}</div>
       </div>
-      <div className="text-center pt-5 text-muted-foreground">8.5% novos usuários</div>
+      <div className="text-center pt-5 text-muted-foreground">{descricao}</div>
     </Card>
   )
 }

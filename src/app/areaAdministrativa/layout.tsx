@@ -29,8 +29,8 @@ const RootLayoutAreaAdministrativa = ({
             asChild
             className={
               pathname === '/areaAdministrativa'
-                ? 'font-bold bg-primary w-full h-12'
-                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-12'
+                ? 'bg-primary w-full h-14'
+                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-14'
             }
           >
             <Link href={'/areaAdministrativa'}>
@@ -42,8 +42,8 @@ const RootLayoutAreaAdministrativa = ({
             asChild
             className={
               pathname === '/areaAdministrativa/alunos'
-                ? 'font-bold bg-primary w-full h-12'
-                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-12'
+                ? ' bg-primary w-full h-14'
+                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-14'
             }
           >
             <Link href={'/areaAdministrativa/alunos'}>
@@ -54,8 +54,8 @@ const RootLayoutAreaAdministrativa = ({
             asChild
             className={
               pathname === '/areaAdministrativa/financeiro'
-                ? 'font-bold bg-primary w-full h-12'
-                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-12'
+                ? ' bg-primary w-full h-14'
+                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-14'
             }
           >
             <Link href={'/areaAdministrativa/financeiro'}>
@@ -66,8 +66,8 @@ const RootLayoutAreaAdministrativa = ({
             asChild
             className={
               pathname === '/areaAdministrativa/avisos'
-                ? 'font-bold bg-primary w-full h-12'
-                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-12'
+                ? ' bg-primary w-full h-14'
+                : 'text-muted-foreground bg-secondary hover:text-slate-100 transition-all duration-300 w-full h-14'
             }
           >
             <Link href={'/areaAdministrativa/avisos'}>
