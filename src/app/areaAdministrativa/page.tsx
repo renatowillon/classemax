@@ -1,4 +1,5 @@
-import { ArrowDownRight, Bell, HandCoins, TrendingUp, Users } from 'lucide-react'
+'use client'
+import { ArrowDownRight, Bell, HandCoins, Users } from 'lucide-react'
 import { SumaryCard } from './_components/sumaryCard'
 import { Title } from './_components/title'
 

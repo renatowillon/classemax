@@ -2,9 +2,11 @@
 import { HeaderAdm } from '@/components/areaAdministrativa/headerAdm'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { useAuth } from '@/context/AuthPrivider'
 import { Bug, LayoutDashboard, MessageCircleMore, Receipt, Users } from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 import { toast } from 'sonner'
 
 const RootLayoutAreaAdministrativa = ({
@@ -16,6 +18,16 @@ const RootLayoutAreaAdministrativa = ({
   const debugInfo = () => {
     toast.warning('Reportar Bug Temporariamente indisponivel.')
   }
+  //Validação de login
+  const { aluno, loading } = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!loading && !aluno) {
+      router.push('/login')
+    }
+  }, [aluno, loading, router])
+  //Validação de login
   return (
     <div className="h-screen border transition-all duration-300 overflow-hidden">
       <div className="bg-slate-50 p-4 flex justify-between items-center">

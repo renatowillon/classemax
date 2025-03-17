@@ -11,16 +11,20 @@ import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 import { FinanceiroAluno } from '@/components/financeiro/FinanceiroAluno'
 import { AreaNotas } from '@/components/notas/areaNotas'
 import { SecretariaAluno } from '@/components/secretaria/secretariaAluno'
-import { redirect } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const AreaAluno = () => {
-  const { aluno, logout } = useAuth()
+  //Validação de login
+  const { aluno, loading } = useAuth()
+  const router = useRouter()
 
-  //validação de autenticação
-  // if (!aluno) {
-  //   redirect('/login')
-  // }
-
+  useEffect(() => {
+    if (!loading && !aluno) {
+      router.push('/login')
+    }
+  }, [aluno, loading, router])
+  //Validação de login
   return (
     <div className="w-full h-full bg-slate-200">
       <Header />

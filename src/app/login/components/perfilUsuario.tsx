@@ -28,8 +28,8 @@ import { Separator } from '@/components/ui/separator'
 import { useAuth } from '@/context/AuthPrivider'
 import { supabase } from '@/lib/supabase'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Power, UserCog } from 'lucide-react'
-import Image from 'next/image'
+import { Link, Power, UserCog, Users } from 'lucide-react'
+import { redirect } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
@@ -125,14 +125,39 @@ export const PerfilUsuario = () => {
               </div>
             </div>
           </DropdownMenuLabel>
-
+          {aluno?.is_adm === true && (
+            <>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                onSelect={() => setDropOpen(false)}
+                onClick={() => redirect('/areaAdministrativa')}
+                className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
+              >
+                <div>Área Administrativa</div>
+                <div>
+                  <Link size={15} />
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                onSelect={() => setDropOpen(false)}
+                onClick={() => redirect('/areaAluno')}
+                className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
+              >
+                <div>Área do Aluno</div>{' '}
+                <div>
+                  <Link size={15} />
+                </div>
+              </DropdownMenuItem>
+            </>
+          )}
           <DropdownMenuSeparator />
           <DropdownMenuItem
             onSelect={() => setDropOpen(false)}
             onClick={() => setDialogOpen(!dialogOpen)}
             className="flex items-center justify-between px-3 text-slate-700 cursor-pointer"
           >
-            <div>Preferencias</div>{' '}
+            <div>Preferências</div>{' '}
             <div>
               <UserCog size={15} />
             </div>

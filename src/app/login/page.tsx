@@ -1,17 +1,25 @@
+'use client'
 import Image from 'next/image'
-import { Home, LogInIcon } from 'lucide-react'
+import { Home } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { SignInButton } from '@clerk/nextjs'
-import { auth } from '@clerk/nextjs/server'
-import { redirect } from 'next/navigation'
+
+import { redirect, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { Login } from './components/login'
+import { useAuth } from '@/context/AuthPrivider'
+import { useEffect } from 'react'
 
-const LoginPage = async () => {
-  const { userId } = await auth()
-  if (userId) {
-    redirect('/areaAluno')
-  }
+const LoginPage = () => {
+  //Validação de login
+  const { aluno, loading } = useAuth()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (aluno) {
+      router.push('/areaAluno')
+    }
+  }, [aluno, loading, router])
+  //Validação de login
 
   return (
     <div className="grid h-screen grid-cols-2">

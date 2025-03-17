@@ -9,8 +9,8 @@ export const HeaderAdm = () => {
       {/* <Link href="/" className="text-primary font-bold text-2xl">
         ClasseMax
       </Link> */}
-      <div className="flex gap-3">
-        <PerfilUsuario />
+      <div className="flex items-center">
+        <p>Olá,</p> <PerfilUsuario />
       </div>
     </div>
   )
