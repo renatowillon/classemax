@@ -11,7 +11,7 @@ import { QuadroDeAvisos } from '@/components/padroes/quadroDeAvisos'
 import { FinanceiroAluno } from '@/components/financeiro/FinanceiroAluno'
 import { AreaNotas } from '@/components/notas/areaNotas'
 import { SecretariaAluno } from '@/components/secretaria/secretariaAluno'
-import { redirect, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 const AreaAluno = () => {
