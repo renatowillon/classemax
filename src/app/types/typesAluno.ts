@@ -1,4 +1,4 @@
-export type Aluno = {
+export type TypeAluno = {
   id: number
   data_cadastro: Date
   nome: string
