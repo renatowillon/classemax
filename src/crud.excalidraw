@@ -302,8 +302,8 @@
         "type": 3
       },
       "seed": 331579101,
-      "version": 188,
-      "versionNonce": 95279347,
+      "version": 190,
+      "versionNonce": 1858184479,
       "isDeleted": false,
       "boundElements": [
         {
@@ -311,11 +311,11 @@
           "type": "arrow"
         },
         {
-          "id": "lzbmwF2y3tthCp2xvQlvI",
+          "id": "adLK4t7mYMKF755qOIdUJ",
           "type": "arrow"
         }
       ],
-      "updated": 1742565555890,
+      "updated": 1742652205606,
       "link": null,
       "locked": false
     },
@@ -450,8 +450,8 @@
     {
       "id": "lzbmwF2y3tthCp2xvQlvI",
       "type": "arrow",
-      "x": 565.7999877929688,
-      "y": 251.60000610351562,
+      "x": 740.7999877929688,
+      "y": 121.60000610351562,
       "width": 68.60003662109375,
       "height": 0.79998779296875,
       "angle": 0,
@@ -469,11 +469,11 @@
         "type": 2
       },
       "seed": 1840054067,
-      "version": 36,
-      "versionNonce": 166397875,
+      "version": 569,
+      "versionNonce": 868568511,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1742565129539,
+      "updated": 1742652197920,
       "link": null,
       "locked": false,
       "points": [
@@ -487,11 +487,7 @@
         ]
       ],
       "lastCommittedPoint": null,
-      "startBinding": {
-        "elementId": "suUGugGjECxkuC_wXUJoS",
-        "focus": -0.04480118247766235,
-        "gap": 16.199951171875
-      },
+      "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": "arrow",
@@ -500,9 +496,9 @@
     {
       "id": "1FjloMFvmITDPNebDmpvv",
       "type": "text",
-      "x": 651.9223759407586,
-      "y": 208.579104309799,
-      "width": 179.119873046875,
+      "x": 826.9223759407586,
+      "y": 78.57910430979899,
+      "width": 179.59988403320312,
       "height": 25,
       "angle": 0,
       "strokeColor": "#f08c00",
@@ -517,28 +513,28 @@
       "index": "aF",
       "roundness": null,
       "seed": 1590602259,
-      "version": 115,
-      "versionNonce": 798609587,
+      "version": 649,
+      "versionNonce": 1332267103,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1742565590928,
+      "updated": 1742652241061,
       "link": null,
       "locked": false,
-      "text": "estado das alunos",
+      "text": "estado dos alunos",
       "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "estado das alunos",
+      "originalText": "estado dos alunos",
       "autoResize": true,
       "lineHeight": 1.25
     },
     {
       "id": "AE9jBL9K1HzAhH0IV-Hy0",
       "type": "text",
-      "x": 653.3812099986629,
-      "y": 244.27540699994194,
+      "x": 828.3812099986629,
+      "y": 114.27540699994194,
       "width": 367.8197326660156,
       "height": 25,
       "angle": 0,
@@ -554,11 +550,11 @@
       "index": "aG",
       "roundness": null,
       "seed": 1081931507,
-      "version": 169,
-      "versionNonce": 1478705747,
+      "version": 701,
+      "versionNonce": 1244539391,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1742565590928,
+      "updated": 1742652197920,
       "link": null,
       "locked": false,
       "text": "funções por Props (add, edit, remove)",
@@ -1457,8 +1453,8 @@
     {
       "id": "dIdYR8zXQ7DhphfKSqKzq",
       "type": "text",
-      "x": 655.353202810113,
-      "y": 282.6913370747698,
+      "x": 830.353202810113,
+      "y": 152.69133707476982,
       "width": 166.3399200439453,
       "height": 25,
       "angle": 0,
@@ -1474,11 +1470,11 @@
       "index": "ah",
       "roundness": null,
       "seed": 1472614013,
-      "version": 243,
-      "versionNonce": 1036877811,
+      "version": 775,
+      "versionNonce": 1811321375,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1742565590928,
+      "updated": 1742652197920,
       "link": null,
       "locked": false,
       "text": "Botão Add Aluno",
@@ -1494,8 +1490,8 @@
     {
       "id": "Dv8ZU56J7EJvQH33Fua7c",
       "type": "text",
-      "x": 785.6712570124744,
-      "y": 105.15422121248875,
+      "x": 729.4212570124744,
+      "y": 215.15422121248875,
       "width": 176.5998992919922,
       "height": 50,
       "angle": 0,
@@ -1511,8 +1507,8 @@
       "index": "aj",
       "roundness": null,
       "seed": 654603805,
-      "version": 433,
-      "versionNonce": 49902845,
+      "version": 563,
+      "versionNonce": 592791455,
       "isDeleted": false,
       "boundElements": [
         {
@@ -1520,7 +1516,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1742565799507,
+      "updated": 1742652190226,
       "link": null,
       "locked": false,
       "text": "Exibição de todos\nos componentes",
@@ -1536,10 +1532,10 @@
     {
       "id": "IweyOY_TwQ-MqP8d1J-hZ",
       "type": "arrow",
-      "x": 736.1284889000499,
-      "y": 129.3017790592517,
-      "width": 46.49712628670079,
-      "height": 1.9896591087357933,
+      "x": 734.0489709497764,
+      "y": 182.74195448871097,
+      "width": 31.38633351485919,
+      "height": 29.36662489805397,
       "angle": 0,
       "strokeColor": "#2f9e44",
       "backgroundColor": "transparent",
@@ -1553,11 +1549,11 @@
       "index": "ak",
       "roundness": null,
       "seed": 62371091,
-      "version": 343,
-      "versionNonce": 224120157,
+      "version": 473,
+      "versionNonce": 2041117631,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1742565799507,
+      "updated": 1742652190226,
       "link": null,
       "locked": false,
       "points": [
@@ -1566,8 +1562,8 @@
           0
         ],
         [
-          46.49712628670079,
-          1.9896591087357933
+          31.38633351485919,
+          29.36662489805397
         ]
       ],
       "lastCommittedPoint": null,
@@ -1584,6 +1580,93 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "elbowed": false
+    },
+    {
+      "id": "adLK4t7mYMKF755qOIdUJ",
+      "type": "arrow",
+      "x": 548.7614157540456,
+      "y": 281.44285637991766,
+      "width": 72.5,
+      "height": 30,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "al",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 844914367,
+      "version": 37,
+      "versionNonce": 1733021233,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1742652206750,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          72.5,
+          30
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "suUGugGjECxkuC_wXUJoS",
+        "focus": -0.28772978159851065,
+        "gap": 1
+      },
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    },
+    {
+      "id": "di1kaTJ4WnNkcyqxl7g6T",
+      "type": "text",
+      "x": 629.2014792306082,
+      "y": 303.94285637991766,
+      "width": 184.27987670898438,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "am",
+      "roundness": null,
+      "seed": 648191391,
+      "version": 721,
+      "versionNonce": 973301393,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1742652228122,
+      "link": null,
+      "locked": false,
+      "text": "formulario de aluno",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "formulario de aluno",
+      "autoResize": true,
+      "lineHeight": 1.25
     }
   ],
   "appState": {

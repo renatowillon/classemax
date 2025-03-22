@@ -29,7 +29,7 @@ const RootLayoutAreaAdministrativa = ({
   }, [aluno, loading, router])
   //Validação de login
   return (
-    <div className="h-screen border transition-all duration-300 overflow-hidden">
+    <div className="h-screen border transition-all duration-300">
       <div className="bg-slate-50 p-4 flex justify-between items-center">
         <p className=" px-10 text-2xl font-bold text-primary flex justify-center items-center">
           ClasseMax
