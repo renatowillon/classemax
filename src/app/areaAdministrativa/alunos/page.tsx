@@ -21,7 +21,7 @@ const Alunos = () => {
       })
   }, [])
 
-  function novoUsuario() {
+  function novoAluno() {
     setAlunoAtual({ id: alunos.length + 1 })
   }
 
@@ -59,7 +59,7 @@ const Alunos = () => {
       <Separator />
       {alunoAtual == null ? (
         <div className="justify-self-end pr-10 pt-5">
-          <Button onClick={novoUsuario} className="self-end bg-green-500 hover:bg-green-400">
+          <Button onClick={novoAluno} className="self-end bg-green-500 hover:bg-green-400">
             Adicionar
           </Button>
         </div>
