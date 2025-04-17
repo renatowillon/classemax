@@ -3,11 +3,11 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react'
 import { supabase } from '@/lib/supabase'
 import { useRouter } from 'next/navigation'
-import { Aluno } from '@/app/types/typesAluno'
+import { TypeAluno } from '@/app/types/typesAluno'
 
 // Definição dos tipos
 interface AuthContextType {
-  aluno: Aluno | null
+  aluno: TypeAluno | null
   loading: boolean
   login: (email: string, senha: string) => Promise<{ error?: string; success?: boolean }>
   logout: () => void
@@ -21,7 +21,7 @@ interface AuthProviderProps {
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [aluno, setAluno] = useState<Aluno | null>(null)
+  const [aluno, setAluno] = useState<TypeAluno | null>(null)
   const [loading, setLoading] = useState(true)
   const router = useRouter()
 
